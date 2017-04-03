@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/meteo.js"></script>
+    
+</head>
+<body>
+
+
+
+<div id="meteo" class="mainDiv"></div>
+<div id="meteo2" class="mainDiv"></div>
+
+
+    
+</div>
+
+ <script>
+$(document).ready(function() {
+    $( function() {
+        $("#meteo").meteo(10);
+		$("#meteo");
+		
+		$("#meteo2").meteo(100);
+		$("#meteo2").draggable();
+		
+    } );
+	
+});
+</script>
+
+</body>
+</html>
