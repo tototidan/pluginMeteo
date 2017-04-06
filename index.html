@@ -21,11 +21,11 @@
  <script>
 $(document).ready(function() {
     $( function() {
-        $("#meteo").meteo(10);
-		$("#meteo");
+        $("#meteo").meteo({"position" : 200 , 'draggable': false , "height" : 10 , "width" : 21});
+
 		
-		$("#meteo2").meteo(100);
-		$("#meteo2").draggable();
+		$("#meteo2").meteo({"position" : 400 , 'draggable': true , 'top': 150 , 'left': 350});
+
 		
     } );
 	
