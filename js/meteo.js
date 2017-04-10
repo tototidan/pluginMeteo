@@ -52,7 +52,7 @@
 
         };
 
-        function getData (url , self , unit) {
+        function getData (url , self ) {
 			
             $.ajax(url).then(function(datas){
                 var currentCondition = datas.current_condition;
