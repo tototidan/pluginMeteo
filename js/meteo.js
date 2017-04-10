@@ -61,7 +61,7 @@
                 var imgData = currentCondition.icon;
                 $(".img-meteo", self).attr("src", imgData);
                 $(".hour" , self).text(new Date().toLocaleTimeString());
-                $('.conversion',self).data("actual" , "C");
+
 				return this;
             });
         }
@@ -95,34 +95,22 @@
 
                 if($('.conversion',self).val() == "C") // converti celsius en fahrenheit
                 {
-                    if($('.conversion',self).data("actual") == "C")
-                    {
-                        return this;
-                    }
-                    else
-                    {
+
                         var tmp = parseFloat($(".meteo-tmp", self).text());
 
                          tmp = (tmp - 32) / 1.8;
 
                         $(".meteo-tmp", self).text(Math.round(tmp)+"°"+$(".conversion" ,self).val());
-                        $('.conversion',self).data("actual" , "C");
-                    }
+
                 }
 
                 if($('.conversion',self).val() == "F")  // le contraire !!
                 {
-                    if($('.conversion',self).data("actual") == "F")
-                    {
-                        return this;
-                    }
-                    else
-                    {
+
                         var tmp = parseFloat($(".meteo-tmp", self).text());
                         tmp = (tmp * 1.8) + 32;
                         $(".meteo-tmp", self).text(Math.round(tmp)+"°"+$(".conversion" ,self).val());
-                        $('.conversion',self).data("actual" , "F");
-                    }
+
                 }
 
             });
