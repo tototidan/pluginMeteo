@@ -54,16 +54,22 @@
 
         function getData (url , self ) {
 			
-            $.ajax(url).then(function(datas){
-                var currentCondition = datas.current_condition;
-                var tmp = currentCondition.tmp;
-                $(".meteo-tmp", self).text(tmp +"°"+$(".conversion" ,self).val());
-                var imgData = currentCondition.icon;
-                $(".img-meteo", self).attr("src", imgData);
-                $(".hour" , self).text(new Date().toLocaleTimeString());
+            var promise = $.ajax(url)
+                    .done(function (datas) {
+                        var currentCondition = datas.current_condition;
+                        var tmp = currentCondition.tmp;
+                        $(".meteo-tmp", self).text(tmp +"°"+$(".conversion" ,self).val());
+                        var imgData = currentCondition.icon;
+                        $(".img-meteo", self).attr("src", imgData);
+                        $(".hour" , self).text(new Date().toLocaleTimeString());
 
-				return this;
-            });
+                        return this;
+                        
+                    }).fail(function () {
+                        console.log("error");
+                    })
+                ;
+
         }
 
         function handleOptions(self) {
@@ -118,6 +124,7 @@
         }
 
         return this.each(function(){
+
             var self = $(this);
             handleOptions(self);
             attributeMainCss(self);
@@ -125,8 +132,7 @@
             addListeners(self);
             var url = $(".meteo-select", self).val();
             getData("http://www.prevision-meteo.ch/services/json/"+url , self);
-			return this;
-            
+            return this;
         });
     };
 })(jQuery);
