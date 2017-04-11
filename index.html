@@ -16,13 +16,13 @@
 
 <!-- .then(function(datas){
                 var currentCondition = datas.current_condition;
-                var tmp = currentCondition.tmp;
-                $(".meteo-tmp", self).text(tmp +"°"+$(".conversion" ,self).val());
-                var imgData = currentCondition.icon;
-                $(".img-meteo", self).attr("src", imgData);
-                $(".hour" , self).text(new Date().toLocaleTimeString());
+                        var tmp = currentCondition.tmp;
+                        $(".meteo-tmp", self).text(tmp +"°"+$(".conversion" ,self).val());
+                        var imgData = currentCondition.icon;
+                        $(".img-meteo", self).attr("src", imgData);
+                        $(".hour" , self).text(new Date().toLocaleTimeString());
 
-				return this;
+                        return this;
             });-->
     
 </div>
@@ -30,10 +30,10 @@
  <script>
 $(document).ready(function() {
     $( function() {
-        $("#meteo").meteo({"position" : 200 , 'draggable': false , "height" : 10 , "width" : 21});
+        $("#meteo").meteo({ 'draggable': false , "height" : 10 , "width" : 21});
 
 		
-		$("#meteo2").meteo({"position" : 400 , 'draggable': true , 'top': 150 , 'left': 350});
+		$("#meteo2").meteo({ 'draggable': true , 'top': 150 , 'left': 350});
 
 		
     } );
