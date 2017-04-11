@@ -88,6 +88,7 @@
             $(".meteo-select",self).change(function(){
                 var url = $(".meteo-select", self).val();
                 getData("http://www.prevision-meteo.ch/services/json/"+url , self );
+                $('.conversion', self).val("C").attr("selected");
 
             });
 
